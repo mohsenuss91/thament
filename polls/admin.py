@@ -10,7 +10,7 @@ class ChoiceInline(admin.TabularInline):
     model = Choice
     extra = 5
 
-
+# HKA 10.08.2016 inhance the display of the model Question
 class QuestionAdmin(admin.ModelAdmin):
     fieldsets = [
         ('None',               {'fields': ['question_text']}),

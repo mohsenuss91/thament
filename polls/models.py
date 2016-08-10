@@ -31,4 +31,15 @@ class Choice(models.Model):
 
     def was_published_recently(self):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+@python_2_unicode_compatible  # only if you need to support Python 2
+class Client(models.Model):
+    #id_clt = models.CharField(max_length=200)
+    nom_clt = models.CharField(max_length=200)
+    prenom_clt = models.CharField(max_length=200)
+    adrs_clt = models.CharField(max_length=200)
+    num_tel_clt = models.CharField(max_length=200)
+    email_clt = models.CharField(max_length=200)
+    login_clt = models.CharField(max_length=200)
 
+    def __str__(self):
+        return self.nom_clt
